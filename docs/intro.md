@@ -17,7 +17,7 @@ You can use **R2E** to in 2 main ways:
 
 You will need to download a web driver or use an already available to you webdriver server.
 
-More info on the [setup](./setup.md) page.
+More info on the [setup](./setup) page.
 
 ## Is this ready to use on production?
 
