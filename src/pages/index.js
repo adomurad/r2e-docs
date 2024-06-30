@@ -2,7 +2,7 @@ import clsx from 'clsx';
 import Link from '@docusaurus/Link';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import Layout from '@theme/Layout';
-import HomepageFeatures from '@site/src/components/HomepageFeatures';
+import demoGif from '@site/static/img/r2e-demo.gif';
 
 import Heading from '@theme/Heading';
 import styles from './index.module.css';
@@ -22,6 +22,7 @@ function HomepageHeader() {
             to="/docs/intro">
             Get Started
           </Link>
+
         </div>
       </div>
     </header>
@@ -36,7 +37,11 @@ export default function Home() {
       description="Description will go into a meta tag in <head />">
       <HomepageHeader />
       <main>
-        <HomepageFeatures />
+        <div className="container padding-vert--md">
+          <div className="row">
+            <img src={demoGif} />
+          </div>
+        </div>
       </main>
     </Layout>
   );

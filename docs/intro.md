@@ -2,46 +2,60 @@
 sidebar_position: 1
 ---
 
-# Tutorial Intro
+# What is R2E?
 
-Let's discover **Docusaurus in less than 5 minutes**.
+**R2E** is a End2End UI testing library for the [Roc](https://www.roc-lang.org/) language.
 
-## Getting Started
+You can use **R2E** to in 2 main ways:
 
-Get started by **creating a new site**.
+- writing End2End UI tests
+- directly controlling the browser/browsers
 
-Or **try Docusaurus immediately** with **[docusaurus.new](https://docusaurus.new)**.
+## How does it work?
 
-### What you'll need
+**R2E** is a using a rest client for the [webdriver](https://www.selenium.dev/documentation/webdriver/).
 
-- [Node.js](https://nodejs.org/en/download/) version 18.0 or above:
-  - When installing Node.js, you are recommended to check all checkboxes related to dependencies.
+You will need to download a web driver or use an already available to you webdriver server.
 
-## Generate a new site
+More info on the [setup](./setup.md) page.
 
-Generate a new Docusaurus site using the **classic template**.
+## Is this ready to use on production?
 
-The classic template will automatically be added to your project after you run the command:
+No!
 
-```bash
-npm init docusaurus@latest my-website classic
+:::warning
+
+The **R2E** package is importing the [basic-cli](https://github.com/roc-lang/basic-cli) platform.
+
+```elixir
+package [
+    Browser,
+    Element,
+    Driver,
+    Assert,
+] {
+    pf: "https://github.com/roc-lang/basic-cli/releases/download/0.11.0/SY4WWMhWQ9NvQgvIthcv15AUeA7rAIJHAHgiaSHGhdY.tar.br",
+    json: "https://github.com/lukewilliamboswell/roc-json/releases/download/0.10.0/KbIfTNbxShRX1A1FgXei1SpO5Jn8sgP6HP6PXbi-xyA.tar.br",
+}
 ```
 
-You can type this command into Command Prompt, Powershell, Terminal, or any other integrated terminal of your code editor.
+This is necessary, because this package has to use `Task` and `Http` module to make http calls to communicate with the webdriver.
 
-The command also installs all necessary dependencies you need to run Docusaurus.
+Right now, this does work and all the examples in this documentation should work without any problems.
 
-## Start your site
+But this should not be possible in Roc and sooner or later this will be blocked in the compiler ([Issue #6850](https://github.com/roc-lang/roc/issues/6850)).
+In this case this package will **stop working**!.
 
-Run the development server:
+This package will be stable and will get a **1.0.0** release when the [module params proposal](https://docs.google.com/document/d/110MwQi7Dpo1Y69ECFXyyvDWzF4OYv1BLojIm08qDTvg/edit#heading=h.cxx7dzgwu0ye) will be implemented in Roc.
 
-```bash
-cd my-website
-npm run start
-```
+So for now you have to use the exact same version of [basic-cli](https://github.com/roc-lang/basic-cli) platform as used in the examples _(At least I think so...)_
 
-The `cd` command changes the directory you're working with. In order to work with your newly created Docusaurus site, you'll need to navigate the terminal there.
+[basic-cli 0.11.0](https://github.com/roc-lang/basic-cli/releases/tag/0.11.0)
 
-The `npm run start` command builds your website locally and serves it through a development server, ready for you to view at http://localhost:3000/.
+:::
 
-Open `docs/intro.md` (this page) and edit some lines: the site **reloads automatically** and displays your changes.
+## Why does this online documentation exist?
+
+Unfortunately I'am not able to generate `roc docs` for this package yet due to the [problem described above](#is-this-ready-to-use-on-production).
+
+This documentation site is temporary.

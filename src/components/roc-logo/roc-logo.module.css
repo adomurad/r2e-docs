@@ -1,0 +1,9 @@
+.rocLogo {
+  width: 40px;
+  height: 40px;
+  margin: 0 auto;
+  fill: #9c7cea;
+  text-shadow: 1px 1px 1px #010101;
+  position: relative;
+  top: -2px;
+}
