@@ -1,0 +1,70 @@
+/**
+ * Any CSS included here will be global. The classic template
+ * bundles Infima by default. Infima is a CSS framework designed to
+ * work well for content-centric websites.
+ */
+
+/* You can override the default Infima variables here. */
+:root {
+  --ifm-color-primary: #2e8555;
+  --ifm-color-primary-dark: #29784c;
+  --ifm-color-primary-darker: #277148;
+  --ifm-color-primary-darkest: #205d3b;
+  --ifm-color-primary-light: #33925d;
+  --ifm-color-primary-lighter: #359962;
+  --ifm-color-primary-lightest: #3cad6e;
+  --ifm-code-font-size: 95%;
+  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
+}
+
+/* For readability concerns, you should choose a lighter palette in dark mode. */
+[data-theme='dark'] {
+  --primary-1: #9c7cea;
+  --primary-2: #1bd6bd;
+  /* --h1-color: #1bc6bd; */
+  --code-bg: #202746;
+  --text-color: #ccc;
+  --body-bg-color: #151517;
+  --border-color: #b6b6b6;
+  --code-color: #eeeeee;
+
+  --ifm-color-secondary: var(--primary-1);
+  --ifm-color-primary: var(--primary-1);
+  --ifm-color-primary-dark: #855de5;
+  --ifm-color-primary-darker: #794ee3;
+  --ifm-color-primary-darkest: #5723d8;
+  --ifm-color-primary-light: #b39bef;
+  --ifm-color-primary-lighter: #bfaaf1;
+  --ifm-color-primary-lightest: #e2d9f9;
+  --ifm-background-color: var(--body-bg-color);
+  --ifm-hero-background-color: var(--code-bg);
+  --ifm-hero-text-color: var(--primary-2);
+
+
+  
+  /* --gray-bg: #202746;
+  --gray: #b6b6b6; */
+  /* --orange: #fd6e08; */
+  /* --green: #8ecc88; */
+  /* --cyan: #12c9be; */
+  /* --blue: #b1afdf; */
+  /* --violet-bg: #332944; */
+  /* --magenta: #f39bac; */
+  /* --primary-1: #9c7cea; */
+  /* --primary-2: #1bd6bd; */
+  /* --text-color: #ccc; */
+  /* --body-bg-color: #151517; */
+  /* --border-color: var(--gray); */
+  /* --code-color: #eeeeee; */
+  /* --logo-solid: #8f8f8f; */
+  /* --faded-color: #bbbbbb; */
+  /* --gray: #6e6e6e; */
+  /* --heading-color: #eee; */
+  /* --header-link-color: #9c7cea; */
+  /* --header-link-hover: #ddd; */
+  /* --h1-color: #1bc6bd; */
+  /* --tutorial-h3-color: var(--primary-1); */
+
+
+  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
+}
