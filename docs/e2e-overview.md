@@ -86,6 +86,12 @@ Fail:   1
 Test run failed
 ```
 
+:::note
+This example will try to use the webdriver running on "http://localhost:9515".
+
+If you want to use different webdriver configuration, the see [this](#).
+:::
+
 ## main
 
 The main function is simple.
