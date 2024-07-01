@@ -67,7 +67,7 @@ main =
 :::note
 This example will try to use the webdriver running on "http://localhost:9515".
 
-If you want to use different webdriver configuration, the see [this](#).
+If you want to use different webdriver configuration, then see [this](guide/driver).
 :::
 
 ### Creating a browser window
@@ -86,7 +86,7 @@ But you can create and navigate using one function:
 browser1 |> Browser.open! driver "https://www.roc-lang.org/packages/basic-cli/"
 ```
 
-To learn more interactions you can do with the `Browser`, goto the [Browser Guide](#).
+To learn more interactions you can do with the `Browser`, goto the [Browser Guide](guide/browser/intro).
 
 ### Browser cleanup
 
@@ -100,4 +100,4 @@ Browser.createBrowserWithCleanup driver \browser ->
     browser |> Browser.navigateTo "http://google.com"
 ```
 
-To learn more cleanup `Browser` functions, goto the [Browser Cleanup Guide](#).
+To learn more cleanup `Browser` functions, goto the [Browser Cleanup Guide](guide/browser/window#creating-navigating-and-closing).

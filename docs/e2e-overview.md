@@ -89,7 +89,7 @@ Test run failed
 :::note
 This example will try to use the webdriver running on "http://localhost:9515".
 
-If you want to use different webdriver configuration, the see [this](#).
+If you want to use different webdriver configuration, then see [this](guide/driver).
 :::
 
 ## main
@@ -110,7 +110,7 @@ The main function is simple.
 
     :::tip
     If you are interested in different report formats like **HTML**, **JSON**, **JUnit XML**, etc.
-    then checkout the [Reporting](#) section.
+    then checkout the [Reporting](guide/test#reporting) section.
     :::
 
 1.  And if you are running this in a automated pipeline and you want
@@ -176,7 +176,7 @@ To find `Elements` in the `Browser`, use:
 replInput = browser |> Browser.findElement! (Css "#source-input")
 ```
 
-To learn more interactions you can do with the `Browser`, goto the [Browser Guide](#).
+To learn more interactions you can do with the `Browser`, goto the [Browser Guide](guide/browser/intro).
 
 ### Interacting with the `Elements`
 
@@ -198,7 +198,7 @@ replInput |> Element.sendKeys! "0.1+0.2{enter}"
 By using the **"\{enter\}"** snippet, you can simulate the **enter** key press in the input.
 :::
 
-To learn more interactions you can do with the `Elements`, goto the [Element Guide](#).
+To learn more interactions you can do with the `Elements`, goto the [Element Guide](guide/element/intro).
 
 ### Making `Assertions`
 
@@ -216,4 +216,4 @@ This assertion will fail!
 In [Roc](https://www.roc-lang.org/) **_0.1 + 0.2_** is exactly **_0.3_**
 :::
 
-To learn more about `Assertions`, goto the [Assertion Guide](#).
+To learn more about `Assertions`, goto the [Assertion Guide](guide/assert).
