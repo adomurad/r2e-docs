@@ -108,8 +108,8 @@ If this is exactly what you saw, then congrats! - you should be able run all exa
 
 ## What's next?
 
-If you are interested in writing E2E UI tests - you should probably checkout the [E2E Framework](e2e-framework/overview) section
+If you are interested in writing E2E UI tests - you should probably checkout the [E2E Framework](e2e-overview) section
 to get an overview what's included in the framework.
 
 If you are interested in using the browser outside of testing use cases - you should probably checkout
-the [Browser Automation](browser-automation/overview) section.
+the [Browser Automation](browser-automation) section.
