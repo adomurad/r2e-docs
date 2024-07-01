@@ -178,3 +178,42 @@ Move the `Browser` window to a new x,y coordinates.
 # move to 500x400
 browser |> Browser.moveTo! 500 400
 ```
+
+### maximizeWindow
+
+Maximize the `Browser` window.
+
+This function returns new position and dimensions of the `Browser` window.
+
+```elixir
+newRect = browser |> Browser.maximizeWindow!
+# newRect: { x: I32, y: I32, width: I32, height: I32 }
+```
+
+In most use cases you want to ignore the output:
+
+```elixir
+browser |> Browser.maximizeWindow!
+```
+
+### minimizeWindow
+
+Minimize the `Browser` window.
+
+This function returns new position and dimensions of the `Browser` window.
+
+```elixir
+newRect = browser |> Browser.minimizeWindow!
+# newRect: { x: I32, y: I32, width: I32, height: I32 }
+```
+
+### fullScreenWindow
+
+Make the `Browser` window full screen.
+
+This function returns new position and dimensions of the `Browser` window.
+
+```elixir
+newRect = browser |> Browser.fullScreenWindow!
+# newRect: { x: I32, y: I32, width: I32, height: I32 }
+```
