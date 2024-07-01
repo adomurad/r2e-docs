@@ -24,6 +24,30 @@ Navigate the `Browser` to the given URL.
 browser |> Browser.navigateTo! "http://roc-lang.org"
 ```
 
+### navigateBack
+
+Navigate the `Browser` back in history.
+
+```elixir
+browser |> Browser.navigateBack!
+```
+
+### navigateForward
+
+Navigate the `Browser` forward in history.
+
+```elixir
+browser |> Browser.navigateForward!
+```
+
+### reloadPage
+
+Reload the current `Browser` page.
+
+```elixir
+browser |> Browser.reloadPage!
+```
+
 ### open
 
 Create a new `Browser` window and navigate to the given URL.
