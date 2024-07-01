@@ -10,7 +10,7 @@ import { themes as prismThemes } from 'prism-react-renderer';
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: 'R2E',
-  tagline: 'Roc2End Web Automation',
+  tagline: 'End2End Web Automation',
   favicon: 'img/favicon.svg',
 
   // Set the production url of your site here
