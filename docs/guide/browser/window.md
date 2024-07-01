@@ -60,6 +60,16 @@ Browser.openWithCleanup! driver url \browser ->
     el = browser |> Browser.findElement! (Css "#fake-id-abcd")
 ```
 
+### close
+
+Close the `Browser` window.
+
+```elixir
+browser |> Browser.close!
+```
+
+## Retrieve Details
+
 ### getTitle
 
 Get browser title.
@@ -71,12 +81,15 @@ title = browser |> Browser.getTitle!
 # title = "Google"
 ```
 
-### close
+### getUrl
 
-Close the `Browser` window.
+Get current URL.
 
 ```elixir
-browser |> Browser.close!
+browser |> Browser.navigateTo! "http://google.com"
+# get url
+url = browser |> Browser.getUrl!
+# url = "https://google.com/"
 ```
 
 ## Resize and move
