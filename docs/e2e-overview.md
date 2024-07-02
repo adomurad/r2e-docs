@@ -15,7 +15,7 @@ Here is an example with 2 tests:
 app [main] {
    pf: platform "https://github.com/roc-lang/basic-cli/releases/download/0.11.0/SY4WWMhWQ9NvQgvIthcv15AUeA7rAIJHAHgiaSHGhdY.tar.br",
    json: "https://github.com/lukewilliamboswell/roc-json/releases/download/0.10.0/KbIfTNbxShRX1A1FgXei1SpO5Jn8sgP6HP6PXbi-xyA.tar.br",
-   r2e: "https://github.com/adomurad/r2e/releases/download/v0.1.3-alpha/7bd2vEo0xTR0rti7dVewUe1Idp_oHEWMcBIE1DeSq9A.tar.br",
+   r2e: "https://github.com/adomurad/r2e/releases/download/v0.1.5-alpha/0IggDPl58TipO1wTnPwgloHTyYfNyNN0I1HAMKmgYqA.tar.br",
 }
 
 

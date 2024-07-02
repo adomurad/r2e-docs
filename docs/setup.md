@@ -82,7 +82,7 @@ Create a [Roc](https://www.roc-lang.org/) file with this content:
 app [main] {
    pf: platform "https://github.com/roc-lang/basic-cli/releases/download/0.11.0/SY4WWMhWQ9NvQgvIthcv15AUeA7rAIJHAHgiaSHGhdY.tar.br",
    json: "https://github.com/lukewilliamboswell/roc-json/releases/download/0.10.0/KbIfTNbxShRX1A1FgXei1SpO5Jn8sgP6HP6PXbi-xyA.tar.br",
-   r2e: "https://github.com/adomurad/r2e/releases/download/v0.1.2-alpha/7av1ULbhNFk9iyUA4KSPBDozlNftjsC7BSQkgcsw1TI.tar.br",
+   r2e: "https://github.com/adomurad/r2e/releases/download/v0.1.5-alpha/0IggDPl58TipO1wTnPwgloHTyYfNyNN0I1HAMKmgYqA.tar.br",
 }
 
 import pf.Task
@@ -92,7 +92,7 @@ import r2e.Driver
 
 main =
    # create a driver client for http://localhost:9515
-   driver = Driver.create LocalServerWithDefaultPort
+   driver = Driver.create {}
    # open roc-lang.org
    browser = Browser.open! driver "http://roc-lang.org"
    # sleep for 3s to be able to see the browser window
