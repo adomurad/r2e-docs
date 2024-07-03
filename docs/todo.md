@@ -68,4 +68,4 @@ The **R2E** api is not the same as webdriver's - but this table at least tracks 
 | POST   | /session/\{session id\}/alert/text                                   | [Send Alert Text](#send-alert-text)                       | ❌   |
 | GET    | /session/\{session id\}/screenshot                                   | [Take Screenshot](#take-screenshot)                       | ❌   |
 | GET    | /session/\{session id\}/element/\{element id\}/screenshot            | [Take Element Screenshot](#take-element-screenshot)       | ❌   |
-| POST   | /session/\{session id\}/print                                        | [Print Page](#print-page)                                 | ❌   |
+| POST   | /session/\{session id\}/print                                        | [Print Page](#print-page)                                 | ⚠️   |
