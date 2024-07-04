@@ -32,7 +32,7 @@ browser |> Assert.titleShouldBe! "https://roc-lang.org/"
 
 ### shouldBe
 
-Checks if the **actual** `Str` is equal to the **expected**.
+Checks if the **actual** value is equal to the **expected**.
 
 In case of fail, this function throws a `[AssertionError Str]` which will be used in the test report.
 
@@ -43,14 +43,17 @@ buttonText = button |> Element.getText!
 buttonText |> Assert.shouldBe! "Roc"
 ```
 
-### shouldBeEqualTo
-
-Checks if the **actual** `Num` is equal to the **expected**.
-
-In case of fail, this function throws a `[AssertionError Str]` which will be used in the test report.
+```elixir
+inputType = nameInput |> Element.getProperty! "checked"
+when inputType is
+    Ok value -> value |> Assert.shouldBe Bool.false
+    Err Empty -> Assert.failWith "this should not happen"
+```
 
 ```elixir
-3 |> Assert.shouldBeEqualTo! 3
+# Result I32 [Empty]
+inputType = nameInput |> Element.getProperty! "clientHeight"
+inputType |> Assert.shouldBe (Ok 17)
 ```
 
 ### shouldBeGreaterThan
@@ -91,4 +94,21 @@ In case of fail, this function throws a `[AssertionError Str]` which will be use
 
 ```elixir
 5 |> Assert.shouldBeLesserOrEqualTo! 10
+```
+
+### failWith
+
+Fails with given error message.
+
+```elixir
+Assert.failWith! "this should not happen"
+```
+
+Can be useful when in cases like:
+
+```elixir
+inputType = nameInput |> Element.getAttribute! "class"
+when inputType is
+    Ok _ -> Assert.failWith "this input should not have a class"
+    Err Empty -> Task.ok {}
 ```
