@@ -43,3 +43,14 @@ Special keys sequences:
   # input text and submit
   searchInput |> Element.sendKeys! "roc lang{enter}"
   ```
+
+### clear
+
+Clear an editable or resettable `Element`.
+
+```elixir
+# find button element
+input = browser |> Browser.findElement! (Css "#email-input")
+# click the button
+input |> Element.clear!
+```
