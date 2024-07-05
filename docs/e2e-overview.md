@@ -33,9 +33,7 @@ main =
    tests = [test1, test2]
 
    # run all tests
-   results = Test.runAllTests! tests
-   # print results to Stdout
-   Test.printResults! results
+   results = tests |> Test.runAllTests! {}
    # return an exit code for the cli
    results |> Test.getResultCode
 
@@ -102,11 +100,7 @@ The main function is simple.
     results = Test.runAllTests! tests
     ```
 
-1.  Then you can print the results to `Stdout` by using:
-
-    ```elixir
-    Test.printResults! results
-    ```
+    The results will printed to `Stdout`.
 
     :::tip
     If you are interested in different report formats like **HTML**, **JSON**, **JUnit XML**, etc.

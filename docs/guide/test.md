@@ -39,30 +39,33 @@ myTest = test "open roc-lang.org website" \browser ->
 
 ## Running tests
 
-### runTest
-
-Run a single **R2E** test.
-
-```elixir
-import Test exposing [test]
-
-main =
-    testResult = Test.runTest! myTest
-    Test.printResults! [testResult]
-
-myTest = test "open roc-lang.org website" \browser ->
-    # open roc-lang.org
-    browser |> Browser.navigateTo! "http://roc-lang.org"
-```
-
 ### runAllTests
 
 Run all **R2E** tests from a list.
 
+Available options:
+
+```elixir
+TestRunnerOptions : {
+   printToConsole ? Bool, # should print results to Stdout? Default: `Bool.true`
+}
+```
+
+Default configuration:
+
 ```elixir
 main =
-    testResults = Test.runAllTests! [test1, test2, test3]
-    Test.printResults! testResults
+    testResults = [test1, test2, test3] |> Test.runAllTests! {}
+    Test.getResultCode! testResults
+```
+
+Without `Stdout`:
+
+```elixir
+main =
+    tests = [test1, test2, test3]
+    testResults = tests |> Test.runAllTests! { printToConsole: Bool.false }
+    Test.getResultCode! testResults
 ```
 
 ### getResultCode
@@ -77,8 +80,6 @@ test run was a success or a failure.
 main =
     # run all tests
     testResults = Test.runAllTests! [test1, test2, test3]
-    # print results to Stdout
-    Test.printResults! testResults
     # return an exit code for the cli
     testResults |> Test.getResultCode
 ```
@@ -107,32 +108,4 @@ roc build ./main.roc
 
 Here are the ways to convert the test results into something else.
 
-### printResults
-
-Print **R2E** test results to `Stdout`.
-
-```elixir
-main =
-    # run all tests
-    testResults = Test.runAllTests! [test1, test2]
-    # print results to Stdout
-    Test.printResults! testResults
-```
-
-This is how to expect when running **2** tests (1 success and 1 fail):
-
-```sh
-➜ roc ./main.roc
-Starting test suite!
-Results:
-Test 0: "check roc header": OK
-// error
-Test 1: "use roc repl": AssertionError: Expected "0.3 : Frac *" to be "0.3000000001 : Frac *"
-
-// error
-Total:  2
-// error
-Pass:   1
-// error
-Fail:   1
-```
+Work in progress...
