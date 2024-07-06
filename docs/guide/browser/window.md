@@ -258,3 +258,13 @@ base64PdfStr = browser |> Browser.printPdfBase64! {
 :::note
 Right now using `Browser.printPdfBase64` requires the _"--linker=legacy"_ compiler flag.
 :::
+
+### getScreenshotBase64
+
+Take a screenshot of the whole document.
+
+The result will be a **base64** encoded `Str` representation of a PNG file.
+
+```elixir
+base64PngStr = browser |> Browser.getScreenshotBase64!
+```
