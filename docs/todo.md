@@ -42,15 +42,15 @@ The **R2E** api is not the same as webdriver's - but this table at least tracks 
 | POST   | /session/\{session id\}/element/\{element id\}/elements              | [Find Elements From Element](#find-elements-from-element) | ❌   |
 | GET    | /session/\{session id\}/element/active                               | [Get Active Element](#get-active-element)                 | ❌   |
 | GET    | /session/\{session id\}/element/\{element id\}/selected              | [Is Element Selected](#is-element-selected)               | ❌   |
-| GET    | /session/\{session id\}/element/\{element id\}/attribute/\{name\}    | [Get Element Attribute](#get-element-attribute)           | ❌   |
-| GET    | /session/\{session id\}/element/\{element id\}/property/\{name\}     | [Get Element Property](#get-element-property)             | ❌   |
+| GET    | /session/\{session id\}/element/\{element id\}/attribute/\{name\}    | [Get Element Attribute](#get-element-attribute)           | ✅   |
+| GET    | /session/\{session id\}/element/\{element id\}/property/\{name\}     | [Get Element Property](#get-element-property)             | ✅   |
 | GET    | /session/\{session id\}/element/\{element id\}/css/\{property name\} | [Get Element CSS Value](#get-element-css-value)           | ❌   |
 | GET    | /session/\{session id\}/element/\{element id\}/text                  | [Get Element Text](#get-element-text)                     | ✅   |
 | GET    | /session/\{session id\}/element/\{element id\}/name                  | [Get Element Tag Name](#get-element-tag-name)             | ❌   |
 | GET    | /session/\{session id\}/element/\{element id\}/rect                  | [Get Element Rect](#get-element-rect)                     | ❌   |
 | GET    | /session/\{session id\}/element/\{element id\}/enabled               | [Is Element Enabled](#is-element-enabled)                 | ❌   |
 | POST   | /session/\{session id\}/element/\{element id\}/click                 | [Element Click](#element-click)                           | ✅   |
-| POST   | /session/\{session id\}/element/\{element id\}/clear                 | [Element Clear](#element-clear)                           | ❌   |
+| POST   | /session/\{session id\}/element/\{element id\}/clear                 | [Element Clear](#element-clear)                           | ✅   |
 | POST   | /session/\{session id\}/element/\{element id\}/value                 | [Element Send Keys](#element-send-keys)                   | ✅   |
 | GET    | /session/\{session id\}/source                                       | [Get Page Source](#get-page-source)                       | ❌   |
 | POST   | /session/\{session id\}/execute/sync                                 | [Execute Script](#execute-script)                         | ❌   |
@@ -66,6 +66,6 @@ The **R2E** api is not the same as webdriver's - but this table at least tracks 
 | POST   | /session/\{session id\}/alert/accept                                 | [Accept Alert](#accept-alert)                             | ❌   |
 | GET    | /session/\{session id\}/alert/text                                   | [Get Alert Text](#get-alert-text)                         | ❌   |
 | POST   | /session/\{session id\}/alert/text                                   | [Send Alert Text](#send-alert-text)                       | ❌   |
-| GET    | /session/\{session id\}/screenshot                                   | [Take Screenshot](#take-screenshot)                       | ❌   |
-| GET    | /session/\{session id\}/element/\{element id\}/screenshot            | [Take Element Screenshot](#take-element-screenshot)       | ❌   |
+| GET    | /session/\{session id\}/screenshot                                   | [Take Screenshot](#take-screenshot)                       | ⚠️   |
+| GET    | /session/\{session id\}/element/\{element id\}/screenshot            | [Take Element Screenshot](#take-element-screenshot)       | ⚠️   |
 | POST   | /session/\{session id\}/print                                        | [Print Page](#print-page)                                 | ⚠️   |

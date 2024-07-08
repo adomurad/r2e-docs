@@ -30,7 +30,7 @@ Use this instead of the [test](#test-1) function when you want to use a differen
 
 ```elixir
 driver = Driver.create { connection: RemoteServer "http://my.webdriver.hub.com:9515" }
-test = Test.customTest
+test = driver |> Test.customTest
 
 myTest = test "open roc-lang.org website" \browser ->
     # open roc-lang.org
@@ -47,7 +47,11 @@ Available options:
 
 ```elixir
 TestRunnerOptions : {
-   printToConsole ? Bool, # should print results to Stdout? Default: `Bool.true`
+    printToConsole ? Bool, # should print results to Stdout? Default: `Bool.true`
+    screenshotOnFail ? Bool, # should take screenshot of test fail? Default: `Bool.true`
+    # default reporters will change in the future to [Reporters.BasicHtmlReporter.reporter]
+    reporters ? List ReporterDefinition, # list of reporters. Default: []
+    outDir ? Str, # relative path to the test results. Default: "testResults"
 }
 ```
 
@@ -55,8 +59,7 @@ Default configuration:
 
 ```elixir
 main =
-    testResults = [test1, test2, test3] |> Test.runAllTests! {}
-    Test.getResultCode! testResults
+    [test1, test2, test3] |> Test.runAllTests! {}
 ```
 
 Without `Stdout`:
@@ -64,24 +67,17 @@ Without `Stdout`:
 ```elixir
 main =
     tests = [test1, test2, test3]
-    testResults = tests |> Test.runAllTests! { printToConsole: Bool.false }
-    Test.getResultCode! testResults
+    tests |> Test.runAllTests! { printToConsole: Bool.false }
 ```
 
-### getResultCode
-
-Get the result code from test results.
-
-You can return this code from the `main` function
+You can return the result of this function from the `main` function
 to indicate to the running _CI_ process if the
 test run was a success or a failure.
 
 ```elixir
 main =
     # run all tests
-    testResults = Test.runAllTests! [test1, test2, test3]
-    # return an exit code for the cli
-    testResults |> Test.getResultCode
+    Test.runAllTests! [test1, test2, test3] {}
 ```
 
 :::warning
@@ -103,9 +99,3 @@ roc build ./main.roc
 ```
 
 :::
-
-## Reporting
-
-Here are the ways to convert the test results into something else.
-
-Work in progress...
