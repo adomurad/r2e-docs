@@ -13,9 +13,9 @@ Here is an example with 2 tests:
 
 ```elixir title="main.roc
 app [main] {
-   pf: platform "https://github.com/roc-lang/basic-cli/releases/download/0.11.0/SY4WWMhWQ9NvQgvIthcv15AUeA7rAIJHAHgiaSHGhdY.tar.br",
+   pf: platform "https://github.com/roc-lang/basic-cli/releases/download/0.12.0/cf_TpThUd4e69C7WzHxCbgsagnDmk3xlb_HmEKXTICw.tar.br",
    json: "https://github.com/lukewilliamboswell/roc-json/releases/download/0.10.0/KbIfTNbxShRX1A1FgXei1SpO5Jn8sgP6HP6PXbi-xyA.tar.br",
-   r2e: "https://github.com/adomurad/r2e/releases/download/v0.1.5-alpha/0IggDPl58TipO1wTnPwgloHTyYfNyNN0I1HAMKmgYqA.tar.br",
+   r2e: "https://github.com/adomurad/r2e/releases/download/v0.1.8-alpha/GAvOhHDCkE5MrD614geTEZDg9KJ1BbUnrUcuCUo1HgU.tar.br",
 }
 
 
@@ -33,11 +33,7 @@ main =
    tests = [test1, test2]
 
    # run all tests
-   results = Test.runAllTests! tests
-   # print results to Stdout
-   Test.printResults! results
-   # return an exit code for the cli
-   results |> Test.getResultCode
+   tests |> Test.runAllTests! {}
 
 
 test1 = test "check roc header" \browser ->
@@ -99,27 +95,19 @@ The main function is simple.
 1.  First you run all tests sequentially by using:
 
     ```elixir
-    results = Test.runAllTests! tests
+    results = Test.runAllTests! tests {}
     ```
 
-1.  Then you can print the results to `Stdout` by using:
-
-    ```elixir
-    Test.printResults! results
-    ```
+    The results will printed to `Stdout`.
 
     :::tip
     If you are interested in different report formats like **HTML**, **JSON**, **JUnit XML**, etc.
     then checkout the [Reporting](guide/test#reporting) section.
     :::
 
-1.  And if you are running this in a automated pipeline and you want
-    the pipeline to fail in case of any errors, then you can get and return
-    the exit code:
-
-    ```elixir
-    results |> Test.getResultCode
-    ```
+    If you are running this in a automated pipeline and you want
+    the pipeline to fail in case of any errors, then
+    `Test.runAllTests` should be the last statement in `main`.
 
     :::warning
     When your run:

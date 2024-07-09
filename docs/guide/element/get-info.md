@@ -90,3 +90,15 @@ Returns a `Task` of `Result Str [Empty]`.
 inputType = nameInput |> Element.getAttribute! "type"
 inputType |> Assert.shouldBe (Ok "email")
 ```
+
+## Printing
+
+### getScreenshotBase64
+
+Take a screenshot of a `Element`.
+
+The result will be a **base64** encoded `Str` representation of a PNG file.
+
+```elixir
+base64PngStr = button |> Element.getScreenshotBase64!
+```
