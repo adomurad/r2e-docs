@@ -13,7 +13,7 @@ sidebar_position: 5
 Create a custom `Reporters`.
 
 ```elixir
-customReporter = Reporting.createReporter "myCustomReporter" \results ->
+customReporter = Reporting.createReporter "myCustomReporter" \results, meta ->
     lenStr = results |> List.len |> Num.toStr
     indexFile = { filePath: "index.html", content: "<h3>Test count: $(lenStr)</h3>" }
     testFile = { filePath: "test.txt", content: "this is just a test" }
@@ -30,7 +30,23 @@ named _"myCustomReporter"_ in the default test results directory _"testResults"_
 - ./testResults/myCustomReporter/index.html
 - ./testResults/myCustomReporter/test.txt
 
-The `results` parameter is a `List` of test results, you can find there error messages, screenshots, etc.
+The callback function gives you 2 parameters:
+
+```elixir
+results : List TestRunResult
+meta : TestRunMetadata
+
+TestRunResult : {
+    name : Str, # test name
+    duration : U64, # single test duration [ms]
+    # result with error message, or error message and screenshot
+    result : Result {} [ErrorMsg Str, ErrorMsgWithScreenshot Str Str],
+}
+
+TestRunMetadata : {
+    duration : U64, # whole test run duration [ms]
+}
+```
 
 ## Builtin reporters
 
@@ -44,9 +60,10 @@ The `BasicHtmlReporter` create a single **html** file with the whole report.
 tests |> Test.runAllTests { reporters: [Reporting.BasicHtmlReporter.reporter] }
 ```
 
-Will create an html file that looks like this:
+The test run will create an html file, containing basic information about the
+test, and screenshots of failed tests, and should look like this:
 
-![TODO](#)
+![TODO](../img/r2e-report.png)
 
 :::warning
 Right now, due to a compiler error, by default there are no reporters used.
