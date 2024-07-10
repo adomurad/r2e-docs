@@ -220,6 +220,46 @@ newRect = browser |> Browser.fullScreenWindow!
 
 ## Printing
 
+### printPdf
+
+Print current page to PDF.
+
+The result will be **base64** encoded `List U8`.
+
+```elixir
+pdfBytes = browser |> Browser.printPdf! {}
+File.writeBytes! "page.pdf" pdfBytes
+```
+
+You can use mostly the same options,
+that are available when printing the page manually in the browser.
+
+Here are all available options with the **default** values:
+
+```elixir
+base64PdfStr = browser |> Browser.printPdfBase64! {
+    page: {
+        width: 21.59, # pageWidth if orientation is "portrait" otherwise pageHeight [cm]
+        height: 27.94, # pageHeight if orientation is "portrait" otherwise pageWidth [cm]
+    },
+    margin: { # page margins [cm]
+        top: 1.0,
+        bottom: 1.0,
+        left: 1.0,
+        right: 1.0,
+    },
+    scale: 1.0, # zoom the size of the content by a factor scale
+    orientation: Portrait, # [Portrait, Landscape]
+    shrinkToFit: Bool.true, # resize the content to match the page width
+    background: Bool.false, # false = suppress output of background images and colors
+    pageRanges: [], # ["1","3","5-7"] = print only pages 1,3,5,6,7
+}
+```
+
+:::note
+Right now using `Browser.printPdf` requires the _"--linker=legacy"_ compiler flag.
+:::
+
 ### printPdfBase64
 
 Print current page to PDF.
@@ -258,6 +298,17 @@ base64PdfStr = browser |> Browser.printPdfBase64! {
 :::note
 Right now using `Browser.printPdfBase64` requires the _"--linker=legacy"_ compiler flag.
 :::
+
+### getScreenshot
+
+Take a screenshot of the whole document.
+
+The result will be a **base64** encoded `List U8` representation of a PNG file.
+
+```elixir
+pngBytes = browser |> Browser.getScreenshot!
+File.writeBytes! "page.png" pngBytes
+```
 
 ### getScreenshotBase64
 

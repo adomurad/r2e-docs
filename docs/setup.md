@@ -80,9 +80,9 @@ Create a [Roc](https://www.roc-lang.org/) file with this content:
 
 ```elixir title="main.roc"
 app [main] {
-   pf: platform "https://github.com/roc-lang/basic-cli/releases/download/0.12.0/cf_TpThUd4e69C7WzHxCbgsagnDmk3xlb_HmEKXTICw.tar.br",
+   pf: platform "https://github.com/roc-lang/basic-cli/releases/download/0.11.0/SY4WWMhWQ9NvQgvIthcv15AUeA7rAIJHAHgiaSHGhdY.tar.br",
    json: "https://github.com/lukewilliamboswell/roc-json/releases/download/0.10.0/KbIfTNbxShRX1A1FgXei1SpO5Jn8sgP6HP6PXbi-xyA.tar.br",
-   r2e: "https://github.com/adomurad/r2e/releases/download/v0.1.8-alpha/GAvOhHDCkE5MrD614geTEZDg9KJ1BbUnrUcuCUo1HgU.tar.br",
+   r2e: "https://github.com/adomurad/r2e/releases/download/v0.1.9-alpha/xNfELlwnT0_LwpCyll4XcX_8yZmNcs1k5ewDcfaez_M.tar.br",
 }
 
 import pf.Task
@@ -105,6 +105,14 @@ When you run this example, a browser window should appear and you should see the
 main page for **3s** and then, the browser should close.
 
 If this is exactly what you saw, then congrats! - you should be able run all examples in this documentation without any problems.
+
+## Troubleshooting
+
+When you get compiler errors, then make sure you are using proper version of the basic-cli platform.
+
+Right now, only 1 version is supported:
+
+https://github.com/roc-lang/basic-cli/releases/tag/0.11.0
 
 ## What's next?
 

@@ -93,6 +93,17 @@ inputType |> Assert.shouldBe (Ok "email")
 
 ## Printing
 
+### getScreenshot
+
+Take a screenshot of a `Element`.
+
+The result will be a **base64** encoded `List U8` representation of a PNG file.
+
+```elixir
+pngBytes = button |> Element.getScreenshot!
+File.writeBytes! "button.png" pngBytes
+```
+
 ### getScreenshotBase64
 
 Take a screenshot of a `Element`.
