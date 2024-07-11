@@ -24,7 +24,7 @@ myTest = test "open roc-lang.org website" \browser ->
 
 ## Running tests
 
-### runAllTests
+### runTests
 
 Run all **R2E** tests from a list.
 
@@ -45,7 +45,7 @@ Default configuration:
 
 ```elixir
 main =
-    [test1, test2, test3] |> Test.runAllTests! {}
+    [test1, test2, test3] |> Test.runTests! {}
 ```
 
 Without `Stdout`:
@@ -53,7 +53,7 @@ Without `Stdout`:
 ```elixir
 main =
     tests = [test1, test2, test3]
-    tests |> Test.runAllTests! { printToConsole: Bool.false }
+    tests |> Test.runTests! { printToConsole: Bool.false }
 ```
 
 You can return the result of this function from the `main` function
@@ -63,7 +63,7 @@ test run was a success or a failure.
 ```elixir
 main =
     # run all tests
-    Test.runAllTests! [test1, test2, test3] {}
+    Test.runTests! [test1, test2, test3] {}
 ```
 
 :::warning
