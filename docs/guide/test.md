@@ -22,21 +22,6 @@ myTest = test "open roc-lang.org website" \browser ->
     browser |> Browser.navigateTo! "http://roc-lang.org"
 ```
 
-### customTest
-
-Create a custom `test` function.
-
-Use this instead of the [test](#test-1) function when you want to use a different [driver configuration](driver).
-
-```elixir
-driver = Driver.create { connection: RemoteServer "http://my.webdriver.hub.com:9515" }
-test = driver |> Test.customTest
-
-myTest = test "open roc-lang.org website" \browser ->
-    # open roc-lang.org
-    browser |> Browser.navigateTo! "http://roc-lang.org"
-```
-
 ## Running tests
 
 ### runAllTests
@@ -52,6 +37,7 @@ TestRunnerOptions : {
     # default reporters will change in the future to [Reporters.BasicHtmlReporter.reporter]
     reporters ? List ReporterDefinition, # list of reporters. Default: []
     outDir ? Str, # relative path to the test results. Default: "testResults"
+    driver ? Driver.create {}, # the `Driver` connection to use for running tests
 }
 ```
 
