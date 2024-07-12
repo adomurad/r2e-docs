@@ -33,7 +33,7 @@ main =
    tests = [test1, test2]
 
    # run all tests
-   tests |> Test.runAllTests! {}
+   tests |> Test.runTests! {}
 
 
 test1 = test "check roc header" \browser ->
@@ -95,7 +95,7 @@ The main function is simple.
 1.  First you run all tests sequentially by using:
 
     ```elixir
-    results = Test.runAllTests! tests {}
+    results = Test.runTests! tests {}
     ```
 
     The results will printed to `Stdout`.
@@ -107,7 +107,7 @@ The main function is simple.
 
     If you are running this in a automated pipeline and you want
     the pipeline to fail in case of any errors, then
-    `Test.runAllTests` should be the last statement in `main`.
+    `Test.runTests` should be the last statement in `main`.
 
     :::warning
     When your run:

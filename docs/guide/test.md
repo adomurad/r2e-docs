@@ -22,24 +22,9 @@ myTest = test "open roc-lang.org website" \browser ->
     browser |> Browser.navigateTo! "http://roc-lang.org"
 ```
 
-### customTest
-
-Create a custom `test` function.
-
-Use this instead of the [test](#test-1) function when you want to use a different [driver configuration](driver).
-
-```elixir
-driver = Driver.create { connection: RemoteServer "http://my.webdriver.hub.com:9515" }
-test = driver |> Test.customTest
-
-myTest = test "open roc-lang.org website" \browser ->
-    # open roc-lang.org
-    browser |> Browser.navigateTo! "http://roc-lang.org"
-```
-
 ## Running tests
 
-### runAllTests
+### runTests
 
 Run all **R2E** tests from a list.
 
@@ -52,6 +37,7 @@ TestRunnerOptions : {
     # default reporters will change in the future to [Reporters.BasicHtmlReporter.reporter]
     reporters ? List ReporterDefinition, # list of reporters. Default: []
     outDir ? Str, # relative path to the test results. Default: "testResults"
+    driver ? Driver.create {}, # the `Driver` connection to use for running tests
 }
 ```
 
@@ -59,7 +45,7 @@ Default configuration:
 
 ```elixir
 main =
-    [test1, test2, test3] |> Test.runAllTests! {}
+    [test1, test2, test3] |> Test.runTests! {}
 ```
 
 Without `Stdout`:
@@ -67,7 +53,7 @@ Without `Stdout`:
 ```elixir
 main =
     tests = [test1, test2, test3]
-    tests |> Test.runAllTests! { printToConsole: Bool.false }
+    tests |> Test.runTests! { printToConsole: Bool.false }
 ```
 
 You can return the result of this function from the `main` function
@@ -77,7 +63,7 @@ test run was a success or a failure.
 ```elixir
 main =
     # run all tests
-    Test.runAllTests! [test1, test2, test3] {}
+    Test.runTests! [test1, test2, test3] {}
 ```
 
 :::warning

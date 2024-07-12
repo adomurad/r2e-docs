@@ -27,3 +27,19 @@ Or you can connect to any url you want using:
 ```elixir
 driver = Driver.create { connection: RemoteServer "http://my.internal.webdriver.com:9515" }
 ```
+
+Available options:
+
+```elixir
+DriverConfiguration : {
+    connection ? Connection, # connection options, Default: LocalServerWithDefaultPort
+    headless ? Bool, # should run headless? Default: Bool.false
+    acceptInsecureCerts ? Bool, # accept insecure certs? Default: Bool.true
+}
+
+Connection : [
+    LocalServerWithDefaultPort, # http://localhost:9515
+    LocalServer U8,
+    RemoteServer Str,
+]
+```

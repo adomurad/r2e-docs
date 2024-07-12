@@ -21,7 +21,7 @@ customReporter = Reporting.createReporter "myCustomReporter" \results, meta ->
     [indexFile, testFile]
 
 
-tests |> Test.runAllTests { reporters: [customReporter] }
+tests |> Test.runTests { reporters: [customReporter] }
 ```
 
 The reporter will create 2 files `index.html` and `test.txt` in a directory
@@ -57,7 +57,7 @@ TestRunMetadata : {
 The `BasicHtmlReporter` create a single **html** file with the whole report.
 
 ```elixir
-tests |> Test.runAllTests { reporters: [Reporting.BasicHtmlReporter.reporter] }
+tests |> Test.runTests { reporters: [Reporting.BasicHtmlReporter.reporter] }
 ```
 
 The test run will create an html file, containing basic information about the
