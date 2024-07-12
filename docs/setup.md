@@ -82,7 +82,7 @@ Create a [Roc](https://www.roc-lang.org/) file with this content:
 app [main] {
    pf: platform "https://github.com/roc-lang/basic-cli/releases/download/0.11.0/SY4WWMhWQ9NvQgvIthcv15AUeA7rAIJHAHgiaSHGhdY.tar.br",
    json: "https://github.com/lukewilliamboswell/roc-json/releases/download/0.10.0/KbIfTNbxShRX1A1FgXei1SpO5Jn8sgP6HP6PXbi-xyA.tar.br",
-   r2e: "https://github.com/adomurad/r2e/releases/download/v0.1.9-alpha/xNfELlwnT0_LwpCyll4XcX_8yZmNcs1k5ewDcfaez_M.tar.br",
+   r2e: "https://github.com/adomurad/r2e/releases/download/v0.2/mADbTFfAJsKbRUrCEPmJBr3WRsbhQ0JBIkr8QU1GK-E.tar.br",
 }
 
 import pf.Task
